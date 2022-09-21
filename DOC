@@ -1,0 +1,43 @@
+CHALLENGE 1
+When you head over to http://locahost:5000 (or whatever shows up as your URL when you run main.py),
+you should have a <h1> that says My Library and link <a> to Add New Book.
+
+    1- Load ' requirements.txt ' on the Terminal " pip install -r requirements.txt ".
+
+    2- In main.py =>
+    @app.route('/')
+    def home():
+    #I set the return to the index.html
+    return render_template('index.html')
+
+    2.0 I 'run' the main.py and had this an error:
+        ---     from jinja2 import Markup, escape
+        ImportError: cannot import name 'Markup' from 'jinja2'
+
+    2.1 To overcome the error : " pip uninstall  Flask Jinja2 "
+        =>
+        " pip install Flask Jinja2 "
+        ( the Jinja2 from the seen to be an old version, by uninstalling the old and installing a recent it is working,
+         once the main.py is "Run" again  the localhost address is working)
+
+CHALLENGE 2
+When you head over to the /add path, e.g. http://locahost:5000/add you should see a form like the one below:
+    1. Add the 'add.html' file to the @app.route("/add")
+
+CHALLENGE 3
+Make the form on the /add path work so that when you click "Add Book" the book details gets added as a dictionary
+to the list called all_books in main.py.
+##### FOR MORE DETAILS ABOUT "FORM" WITH FLASK => https://wtforms.readthedocs.io/en/3.0.x/
+
+*** Setting SQLITE3 .531 ***
+
+To install and be able to see and manage the sqlite3 'new-books-collection.db' file: https://sqlitebrowser.org/dl/
+
+????? sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: book.id [SQL: INSERT INTO book (id, title, author, rating) VALUES (?, ?, ?, ?)] [parameters: (1, 'Tom Tom', 'erpapi', 8.5)] (Background on this error at: https://sqlalche.me/e/14/gkpj)
+
+????Error when working with flask sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
+
+
+
+
+
